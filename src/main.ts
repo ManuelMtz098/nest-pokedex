@@ -9,6 +9,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      transform: true, //habilita que conviertas a los tipos de datos especificados en los dto
+      transformOptions: {
+        enableImplicitConversion: true
+      }
     }),
   );
   await app.listen(process.env.PORT ?? 3000);
